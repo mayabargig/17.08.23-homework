@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- question 33 <script> -->
+        function factorial(number) {
+    if (number === 0 || number === 1) {
+        return 1;
+    } else {
+        var result = 1;
+        for (var i = 2; i <= number; i++) {
+            result *= i;
+        }
+        return result;
+    }
+}
+
+    var userNumber = +prompt("Enter a number: ");
+    var result = factorial(userNumber);
+    console.log("The factorial of " + userNumber + " is: " + result);
+    </script>
+
+    <!-- question 34 <script> -->
+        function getName (text) {
+            console.log(text);
+        }
+
+        var name = prompt("enter your name");
+        getName(name);
+    </script>
+
+    <!-- question 35 <script> -->
+        function getNumbers (){
+            var counter = 0;
+
+            while (counter < 10) {
+                var numUser = +prompt("enter your number");
+                if(numUser > 10) {
+                    console.log("yes");
+                } else {
+                    console.log("no")
+                    counter++;
+                }
+            }  
+        }
+
+        getNumbers();
+    </script>
+
+    <!-- question 36 <script> -->
+        function findMinMax (){
+            var min = Infinity;
+            var max = -Infinity;
+
+            for( var i = 0; i < 5; i++) {
+                var num = +prompt("enter number " + (i + 1) + ": ");
+
+                if(num < min){
+                    min = num;
+                } 
+                if(num > max){
+                    max = num;
+                }
+            }
+            console.log("min number: " + min);
+            console.log("max number: " + max);
+        }
+        findMinMax()
+    </script>
+
+    <!-- question 37 <script> -->
+        function aFirstLetter () {
+            var name = prompt("enter your name: ");
+
+             while (name.charAt(0).toUpperCase() !== "A"){
+                console.log(name);
+                name = prompt("enter your name: ")
+             }
+
+        }
+
+        aFirstLetter();
+    </script>
+
+    <!--  question 38 <script> -->
+        function printNameUntilAora() {
+            var name;
+            
+            do {
+                name = prompt("Enter your name: ");
+                console.log(name);
+            } while (!name.toLowerCase().startsWith('a' || 'A'));
+        }
+
+        printNameUntilAora();
+
+    </script>
+
+    <!-- question 40 <script> -->
+        function minAndMaxNumber (){
+            var min = Number.POSITIVE_INFINITY;
+            var max = Number.NEGATIVE_INFINITY;
+
+            while (true){
+                var num = +prompt("enter a number (enter 0 or a negative number to finish): ");
+
+                if (num < min){
+                  min = num;
+                } 
+                if(num > max) {
+                    max = num;
+                } 
+                if (num <= 0) {
+                    console.log("Minimum number: " + min);
+                    console.log("Maximum number: " + max);
+                    return
+                }
+            }
+        }
+
+        minAndMaxNumber();
+    </script>
+
+    <!-- question 41 <script> -->
+        function printDigits(number) {
+            var numStr = number.toString();
+
+            for (var i = 0; i < numStr.length; i++) {
+                console.log(numStr[i]);
+            }
+        }
+
+        var userNumber = +prompt("Enter a number: ");
+        printDigits(userNumber);
+    </script>
+
+    <!--question 42 <script> -->
+        function printMultiplicationTable() {
+            for (var i = 1; i <= 10; i++) {
+                for (var j = 1; j <= 10; j++) {
+                    console.log(i + " * " + j + " = " + (i * j));
+                }
+            }
+        }
+
+        printMultiplicationTable();
+    </script>
+
+    <!-- question 43 <script> -->
+        function numberGuessingGame() {
+                var targetNumber = Math.floor(Math.random() * 100);
+                var numberOfGuesses = 0;
+                var startTime = new Date();
+
+                while (true) {
+                    var userGuess = parseInt(prompt("Guess a number between 0 and 99:"));
+
+                    if (isNaN(userGuess)) {
+                        console.log("Please enter a valid number.");
+                    } else if (userGuess < targetNumber) {
+                        console.log("Higher!");
+                        numberOfGuesses++;
+                    } else if (userGuess > targetNumber) {
+                        console.log("Lower!");
+                        numberOfGuesses++;
+                    } else {
+                        var endTime = new Date();
+                        var totalTime = (endTime - startTime) / 1000; // Convert to seconds
+                        console.log("Congratulations! You guessed the number " + targetNumber + " in " + numberOfGuesses + " guesses.");
+                        console.log("Total time: " + totalTime + " seconds.");
+                        break;
+                    }
+                }
+            }
+
+numberGuessingGame();
+
+    </script>
+</body>
+</html>
